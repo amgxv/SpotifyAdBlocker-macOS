@@ -1,6 +1,6 @@
 # SpotifyAdBlocker-macOS
 
-Script based on [Ruvelro/Spotihosts](https://github.com/ruvelro/Spotihosts) which adds a few lines to hosts file that blocks Spotify ads.
+Script based on [Ruvelro/Spotihosts](https://github.com/ruvelro/Spotihosts) which adds a few lines to hosts file to block Spotify ads.
 
 #### Usage 
 
