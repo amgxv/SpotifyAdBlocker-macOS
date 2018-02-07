@@ -4,7 +4,7 @@ Script based on [Ruvelro/Spotihosts](https://github.com/ruvelro/Spotihosts) whic
 
 #### Usage 
 
-Download the .dmg file and open it like a normal macOS file, then Exterminate Ads.
+[Download the .dmg](https://github.com/amgxv/SpotifyAdBlocker-macOS/releases/download/v0.1/Spotyblock.dmg) file and open it like a normal macOS file, then Exterminate Ads.
 ![usagedmg](https://i.imgur.com/QOdoDUt.png)
 
 
