@@ -26,9 +26,9 @@ HOSTS="#[Spotify Ad-Block Hosts]
 
 if [ "$EUID" -ne 0 ]
   then 
-  printf "\n"
-  read -p "Please run as root"
-  clear && exit
+  printf "\nThis script needs to be run as root.\nPassword will be asked...\n"
+  sudo "$0"
+  exit
 fi
 
 clear
@@ -41,7 +41,8 @@ clear
 
 if grep -q "Spotify Ad-Block Hosts" /private/etc/hosts;
 then
-	read -p "You have already runned this script"
+	printf "You have already runned this script\n"
+    read -p "  Press enter to exit"
 	clear && exit
 fi
 
@@ -49,21 +50,22 @@ echo -e "$HOSTS" >> /private/etc/hosts
 elif [[ $CONF = N ]] || [[ $CONF = n ]]; then
 clear && exit
 else
-	printf "\n"
-	read -p "Invalid value, program will exit..."
+	printf "\nInvalid value, program will exit...\n"
+	read -p "  Press enter to exit"
 	exit
 fi
 
 if grep -q 'Spotify Ad-Block Hosts' /private/etc/hosts
 then
 clear
-read -p "Hosts file modified successfully!
-Enjoy Spotify without Ads
-"
+printf "Hosts file modified successfully!
+Enjoy Spotify without Ads\n"
+read -p "  Press enter to exit"
 clear
 else
 clear
-read -p "Error modifying hosts file :c"
+printf "Error modifying hosts file :c\n"
+read -p "  Press enter to exit"
 clear
 fi
 
