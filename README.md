@@ -8,3 +8,5 @@ Clone this repo
 `git clone https://github.com/amgxv/SpotifyAdBlocker-macOS.git`  
 and run `spotyblock.sh` as root.
 `sudo ./spotyblock.sh`
+
+![usage](https://media.giphy.com/media/xThtaicJT8Q2dDW6Pe/giphy.gif)
