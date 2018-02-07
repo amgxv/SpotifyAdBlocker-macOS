@@ -4,6 +4,10 @@ Script based on [Ruvelro/Spotihosts](https://github.com/ruvelro/Spotihosts) whic
 
 #### Usage 
 
+Download the .dmg file and open it like a normal macOS file, then Exterminate Ads.
+![usagedmg](https://i.imgur.com/QOdoDUt.png)
+
+
 Clone this repo
 `git clone https://github.com/amgxv/SpotifyAdBlocker-macOS.git`  
 and run `spotyblock.sh` as root.
