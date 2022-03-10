@@ -19,7 +19,6 @@ HOSTS="#[Spotify Ad-Block Hosts]
 0.0.0.0 omaze.com
 0.0.0.0 redirector.gvt1.com
 0.0.0.0 s0.2mdn.net
-0.0.0.0 spclient.wg.spotify.com
 0.0.0.0 v.jwpcdn.com
 0.0.0.0 weblb-wg.gslb.spotify.com
 0.0.0.0 www.omaze.com"
@@ -41,7 +40,7 @@ clear
 
 if grep -q "Spotify Ad-Block Hosts" /private/etc/hosts;
 then
-	printf "You have already runned this script\n"
+	printf "You have already ran this script\n"
     read -p "  Press enter to exit"
 	clear && exit
 fi
