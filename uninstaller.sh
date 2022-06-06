@@ -9,7 +9,7 @@ fi
 clear
 printf "\nThis script will edit your hosts file... \n"
 printf "\nDo you want to continue? [y|n] \n"
-read conf
+read -r conf
 
 if [[ $conf = Y ]] || [[ $conf = y ]]; then
   clear
@@ -44,7 +44,7 @@ elif [[ $conf = N ]] || [[ $conf = n ]]; then
   exit 0
 else
 	printf "\nInvalid value, program will exit...\n"
-	read -p "  Press enter to exit"
+	read -rp "  Press enter to exit"
 	exit 1
 fi
 
@@ -52,11 +52,11 @@ if ! grep -q 'Spotify Ad-Block Hosts' "/private/etc/hosts"; then
   clear
   printf "Spotyblock uninstalled or not detected. Current hosts : \n"
   cat "/private/etc/hosts"
-  read -p "  Press enter to exit"
+  read -rp "  Press enter to exit"
   clear
 else
   clear
   printf "Error modifying hosts file :c\n"
-  read -p "  Press enter to exit"
+  read -rp "  Press enter to exit"
   clear
 fi
