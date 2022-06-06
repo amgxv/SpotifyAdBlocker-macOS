@@ -40,16 +40,18 @@ if [[ $conf = Y ]] || [[ $conf = y ]]; then
   if grep -q "Spotify Ad-Block Hosts" "/private/etc/hosts"; then
     printf "You have already ran this script\n"
     read -p "  Press enter to exit"
-    clear && exit
+    clear
+    exit 0
   fi
   
   echo -e "$hosts" >> "/private/etc/hosts"
 elif [[ $conf = N ]] || [[ $conf = n ]]; then
-  clear && exit
+  clear
+  exit 0
 else
 	printf "\nInvalid value, program will exit...\n"
 	read -p "  Press enter to exit"
-	exit
+	exit 1
 fi
 
 if grep -q "Spotify Ad-Block Hosts" "/private/etc/hosts"; then

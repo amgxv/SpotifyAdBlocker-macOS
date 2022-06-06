@@ -40,11 +40,12 @@ if [[ $conf = Y ]] || [[ $conf = y ]]; then
     sed -i -e "/0.0.0.0 www.omaze.com/d" "/private/etc/hosts"
   fi
 elif [[ $conf = N ]] || [[ $conf = n ]]; then
-  clear && exit
+  clear
+  exit 0
 else
 	printf "\nInvalid value, program will exit...\n"
 	read -p "  Press enter to exit"
-	exit
+	exit 1
 fi
 
 if ! grep -q 'Spotify Ad-Block Hosts' "/private/etc/hosts"; then
