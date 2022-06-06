@@ -66,6 +66,9 @@ if [[ $conf = Y ]] || [[ $conf = y ]]; then
   fi
   
   echo -e "$hosts" >> "/private/etc/hosts"
+  
+  killall mDNSResponder
+  killall mDNSResponderHelper
 elif [[ $conf = N ]] || [[ $conf = n ]]; then
   clear
   exit 0

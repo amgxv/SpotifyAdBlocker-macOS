@@ -60,6 +60,9 @@ if [[ $conf = Y ]] || [[ $conf = y ]]; then
     sed -i -e "/:: weblb-wg.gslb.spotify.com/d/d" "/private/etc/hosts"
     sed -i -e "/0.0.0.0 www.omaze.com/d" "/private/etc/hosts"
     sed -i -e "/:: www.omaze.com/d/d" "/private/etc/hosts"
+    
+    killall mDNSResponder
+    killall mDNSResponderHelper
   fi
 elif [[ $conf = N ]] || [[ $conf = n ]]; then
   clear

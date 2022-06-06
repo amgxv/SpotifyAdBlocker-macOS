@@ -46,3 +46,6 @@ sudo sed -i -e "/0.0.0.0 weblb-wg.gslb.spotify.com/d" "/private/etc/hosts"
 sudo sed -i -e "/:: weblb-wg.gslb.spotify.com/d/d" "/private/etc/hosts"
 sudo sed -i -e "/0.0.0.0 www.omaze.com/d" "/private/etc/hosts"
 sudo sed -i -e "/:: www.omaze.com/d/d" "/private/etc/hosts"
+
+sudo killall mDNSResponder
+sudo killall mDNSResponderHelper
