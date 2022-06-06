@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOSTS="#[Spotify Ad-Block Hosts] 
+hosts="#[Spotify Ad-Block Hosts]
 0.0.0.0 adeventtracker.spotify.com
 0.0.0.0 ads-fa.spotify.com
 0.0.0.0 analytics.spotify.com
@@ -23,8 +23,7 @@ HOSTS="#[Spotify Ad-Block Hosts]
 0.0.0.0 weblb-wg.gslb.spotify.com
 0.0.0.0 www.omaze.com"
 
-if [ "$EUID" -ne 0 ]
-  then 
+if [ "$EUID" -ne 0 ]; then
   printf "\nThis script needs to be run as root.\nPassword will be asked...\n"
   sudo "$0"
   exit
@@ -33,38 +32,35 @@ fi
 clear
 printf "\nThis script will edit your hosts file... \n"
 printf "\nDo you want to continue? [y|n] \n"
-read CONF
+read conf
 
-if [[ $CONF = Y ]] || [[ $CONF = y ]]; then
-clear
-
-if grep -q "Spotify Ad-Block Hosts" /private/etc/hosts;
-then
-	printf "You have already ran this script\n"
+if [[ $conf = Y ]] || [[ $conf = y ]]; then
+  clear
+  
+  if grep -q "Spotify Ad-Block Hosts" "/private/etc/hosts"; then
+    printf "You have already ran this script\n"
     read -p "  Press enter to exit"
-	clear && exit
-fi
-
-echo -e "$HOSTS" >> /private/etc/hosts
-elif [[ $CONF = N ]] || [[ $CONF = n ]]; then
-clear && exit
+    clear && exit
+  fi
+  
+  echo -e "$hosts" >> "/private/etc/hosts"
+elif [[ $conf = N ]] || [[ $conf = n ]]; then
+  clear && exit
 else
 	printf "\nInvalid value, program will exit...\n"
 	read -p "  Press enter to exit"
 	exit
 fi
 
-if grep -q 'Spotify Ad-Block Hosts' /private/etc/hosts
-then
-clear
-printf "Hosts file modified successfully!
-Enjoy Spotify without Ads\n"
-read -p "  Press enter to exit"
-clear
+if grep -q "Spotify Ad-Block Hosts" "/private/etc/hosts"; then
+  clear
+  printf "Hosts file modified successfully!
+  Enjoy Spotify without Ads\n"
+  read -p "  Press enter to exit"
+  clear
 else
-clear
-printf "Error modifying hosts file :c\n"
-read -p "  Press enter to exit"
-clear
+  clear
+  printf "Error modifying hosts file :c\n"
+  read -p "  Press enter to exit"
+  clear
 fi
-
