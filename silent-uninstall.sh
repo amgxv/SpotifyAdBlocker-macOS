@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "Uninstalling Spotyblock..."
 sudo sed -i -e "/#\[Spotify Ad-Block Hosts\]/d" "/private/etc/hosts"

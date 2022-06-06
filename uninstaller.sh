@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ "$EUID" -ne 0 ]; then
   printf "\nThis script needs to be run as root.\nPassword will be asked...\n"

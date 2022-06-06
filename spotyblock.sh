@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 hosts="#[Spotify Ad-Block Hosts]
 0.0.0.0 adeventtracker.spotify.com
