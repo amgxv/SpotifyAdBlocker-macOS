@@ -15,15 +15,22 @@ if [[ $conf = Y ]] || [[ $conf = y ]]; then
   clear
   
   if grep -q "Spotify Ad-Block Hosts" "/private/etc/hosts"; then
-    sed -i -e "/#\[Spotify Ad-Block Hosts\]/d" "/private/etc/hosts"
-    while read -r line
-    do
-      sed -i -e "/$line/d" "/private/etc/hosts"
-    done < "hosts.txt"
-    
-    killall mDNSResponder
-    killall mDNSResponderHelper
+    printf "You have already ran this script\n"
+    read -rp "  Press enter to exit"
+    clear
+    exit 0
   fi
+  
+  echo -e "#[Spotify Ad-Block Hosts]" >> "/private/etc/hosts"
+  curl -Ss https://raw.githubusercontent.com/amgxv/SpotifyAdBlocker-macOS/master/hosts/hosts.txt -o /tmp/spotyblockhosts
+  while read -r line
+  do
+    echo -e $line >> "/private/etc/hosts"
+  done < "/tmp/spotyblockhosts"
+
+  rm /tmp/spotyblockhosts
+  killall mDNSResponder
+  killall mDNSResponderHelper
 elif [[ $conf = N ]] || [[ $conf = n ]]; then
   clear
   exit 0
@@ -33,10 +40,10 @@ else
 	exit 1
 fi
 
-if ! grep -q 'Spotify Ad-Block Hosts' "/private/etc/hosts"; then
+if grep -q "Spotify Ad-Block Hosts" "/private/etc/hosts"; then
   clear
-  printf "Spotyblock uninstalled or not detected. Current hosts : \n"
-  cat "/private/etc/hosts"
+  printf "Hosts file modified successfully!
+  Enjoy Spotify without Ads\n"
   read -rp "  Press enter to exit"
   clear
 else
